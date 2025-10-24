@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "text": "Ci, którzy uważnie słuchali w kościele (albo umieją czytać ↑), mogli zauważyć, że otrzymałam super drugie imię. Jakie?",
+    "options": { "1": "Zara", "X": "Barbara", "2": "Rozalia" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 2,
+    "text": "Właśnie po chrzcie, a jutro stuknie mi 365 dni. Czas pędzi – swoją drogą, w który dzień tygodnia się urodziłam?",
+    "options": { "1": "Czwartek", "X": "Piątek", "2": "Sobota" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 3,
+    "text": "Mam niesamowitą słabość do tej marki jedzeniowej dla dzieci:",
+    "options": { "1": "Semper", "X": "Hipp", "2": "Nestlé" },
+    "correct": "1",
+    "media": null
+  },
+  {
+    "id": 4,
+    "text": "Skoro już przy jedzeniu: na co rzucam się bez opamiętania spośród tych trzech rzeczy?",
+    "options": { "1": "Ziemniaki", "X": "Awokado", "2": "Brokuły" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 5,
+    "text": "Lubię gadać o wszystkim, ale jak dotąd powiedziałam tylko jedno słowo. Jakie?",
+    "options": { "1": "Mama", "X": "Tata", "2": "Cześć" },
+    "correct": "1",
+    "media": null
+  },
+  {
+    "id": 6,
+    "text": "„Owocowe tubki” to życie, ale co lubię robić najbardziej spośród tych trzech?",
+    "options": {
+      "1": "Wspinać się do lodówki w poszukiwaniu tubek",
+      "X": "Badać turbinę pralki",
+      "2": "Spać w nietypowych miejscach, np. w pudełku po butach"
+    },
+    "correct": "X",
+    "media": null
+  },
+  {
+    "id": 7,
+    "text": "Licząc w standardowych jabłkach (Royal Gala) – na ile jabłek byłam wysoka przy urodzeniu?",
+    "options": { "1": "Wysoka na 9 jabłek", "X": "Wysoka na 7 jabłek", "2": "Wysoka na 6 jabłek" },
+    "correct": "X",
+    "media": null
+  },
+  {
+    "id": 8,
+    "text": "W domu często kojarzą mnie z tym zwierzęciem. Jakim?",
+    "options": { "1": "Królik", "X": "Owca", "2": "Niedźwiedź" },
+    "correct": "1",
+    "media": null
+  },
+  {
+    "id": 9,
+    "text": "17 czerwca to nie tylko święto narodowe Islandii, to także dzień, w którym nauczyłam się…",
+    "options": { "1": "Jeść łyżką", "X": "Siedzieć bez podparcia", "2": "Raczkować do przodu" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 10,
+    "text": "Moje ulubione zajęcie o 07:20 w soboty to stanąć przed kuchenką zabawkową i wyciągnąć tę rzecz. Którą?",
+    "options": { "1": "Łyżka do lodów", "X": "Arbuz", "2": "Diddi od Babblarna" },
+    "correct": "X",
+    "media": null
+  },
+  {
+    "id": 11,
+    "text": "W rozmowach na messengerze mama i tata nazywają mnie czasem…",
+    "options": { "1": "L", "X": "Lars", "2": "LARRA" },
+    "correct": "X",
+    "media": null
+  },
+   {
+    "id": 12,
+    "text": "Obecnie mam tylko jednego kuzyna. Jak ma na imię?",
+    "options": { "1": "Lennon", "X": "Lion", "2": "Leon" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 13,
+    "text": "Kiedy się urodziłam, byłam trochę większa niż moja siostra. Ile ważyłam?",
+    "options": { "1": "3736g", "X": "3524g", "2": "3467g" },
+    "correct": "1",
+    "media": null
+  },
+  {
+    "id": 100,
+    "text": "Wiesz, o której porze dnia wyskoczyłam na świat?",
+    "options": { "1": "14:01 (popołudnie)", "X": "6:52 (poranek)", "2": "22:17 (wieczór)" },
+    "correct": "X",
+    "media": null
+  }
+
+]

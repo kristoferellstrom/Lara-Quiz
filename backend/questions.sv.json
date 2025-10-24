@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "text": "Ni som lyssnade lite extra noga i kyrkan (eller är läskunniga ↑)  kanske uppmärksammade att jag fick ett häftigt andranamn. Vilket var det?",
+    "options": { "1": "Zara", "X": "Barbara", "2": "Rozalia" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 2,
+    "text": "Precis döpt och i morgon blir jag 365 dagar ung. Tiden springer iväg – vet du förresten vilken veckodag jag är född på?",
+    "options": { "1": "Torsdag", "X": "Fredag", "2": "Lördag" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 3,
+    "text": "Jag har en otrolig dragningskraft till detta barnmatsmärke:",
+    "options": { "1": "Semper", "X": "Hipp", "2": "Nestlé" },
+    "correct": "1",
+    "media": null
+  },
+  {
+    "id": 4,
+    "text": "När vi ändå är inne på mat: vad kastar jag mig hejdlöst över mellan dessa tre alternativ?",
+    "options": { "1": "Potatis", "X": "Avokado", "2": "Broccoli" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 5,
+    "text": "Jag gillar att snacka om det mesta, men hittills har jag bara sagt ett ord. Vilket?",
+    "options": { "1": "Mamma", "X": "Pappa", "2": "Hej" },
+    "correct": "1",
+    "media": null
+  },
+  {
+    "id": 6,
+    "text": "Klämmisar är livet, men vad gillar jag att göra lite extra av dessa tre alternativ?",
+    "options": {
+      "1": "Klättra in i kylskåpet i jakt på klämmisar",
+      "X": "Undersöka turbinen i tvättmaskinen",
+      "2": "Sova på udda platser, som i en skokartong"
+    },
+    "correct": "X",
+    "media": null
+  },
+  {
+    "id": 7,
+    "text": "Räknat i standardäpplen (Royal Gala) – hur många äpplen hög var jag vid födseln?",
+    "options": { "1": "9 äpplen hög", "X": "7 äpplen hög", "2": "6 äpplen hög" },
+    "correct": "X",
+    "media": null
+  },
+  {
+    "id": 8,
+    "text": "Hemma hos mig blir jag ofta förknippad med detta djur. Vilket?",
+    "options": { "1": "Kanin", "X": "Får", "2": "Björn" },
+    "correct": "1",
+    "media": null
+  },
+  {
+    "id": 9,
+    "text": "17 juni är inte bara Islands nationaldag, det är även dagen jag lärde mig att…",
+    "options": { "1": "Äta med sked", "X": "Sitta utan stöd", "2": "Krypa framåt" },
+    "correct": "2",
+    "media": null
+  },
+  {
+    "id": 10,
+    "text": "Min favoritsysselsättning 07:20 på lördagar är att stå framför leksaksköket och dra fram den här grejen. Vilken?",
+    "options": { "1": "Glasskopan", "X": "Vattenmelonen", "2": "Diddi från Babblarna" },
+    "correct": "X",
+    "media": null
+  },
+    {
+    "id": 11,
+    "text": "I mammas och pappas messengerkonversationer kallas jag ibland för...",
+    "options": { "1": "L", "X": "Lars", "2": "LARRA" },
+    "correct": "X",
+    "media": null
+  },
+
+    {
+    "id": 12,
+    "text": "Jag har för närvarade enbart en kusin. Vad heter han?",
+    "options": { "1": "Lennon", "X": "Lion", "2": "Leon" },
+    "correct": "2",
+    "media": null
+  },
+    {
+    "id": 13,
+    "text": "När jag föddes var jag lite biffigare än min syrra. Vad vägde jag?",
+    "options": { "1": "3736g", "X": "3524g", "2": "3467g" },
+    "correct": "1",
+    "media": null
+  },
+      {
+    "id": 100,
+    "text": "Vet du vilken tid på dygnet jag ploppade ut?",
+    "options": { "1": "14:01 (eftermiddags barn)", "X": "6:52 (morgonbarn)", "2": "22:17 (kvällsbarn)" },
+    "correct": "X",
+    "media": null
+  }
+]

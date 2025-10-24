@@ -1,0 +1,25 @@
+[
+  { "id": 1, "label": "Hungrig",        "correct": true  },
+  { "id": 2, "label": "Syster",     "correct": true  },
+  { "id": 3, "label": "Grovt bröd", "correct": true  },
+  { "id": 4, "label": "Klätterapa",         "correct": true  },
+  { "id": 5, "label": "Smörgåsgurka",        "correct": true  },
+  { "id": 6, "label": "Dynamit Harry",      "correct": true  },
+  { "id": 7, "label": "Larki",      "correct": true  },
+  { "id": 8, "label": "Envis",      "correct": true  },
+  { "id": 21, "label": "Lättroad",       "correct": true },
+  { "id": 22, "label": "Dzidziuś",       "correct": true },
+
+  { "id": 9,  "label": "Klarar sig själv",     "correct": false },
+  { "id": 10, "label": "Alexander",  "correct": false },
+  { "id": 11, "label": "Sover hela nätter",   "correct": false },
+  { "id": 12, "label": "Fisk",  "correct": false },
+  { "id": 13, "label": "Duscha",      "correct": false },
+  { "id": 14, "label": "Åka bil",   "correct": false },
+  { "id": 15, "label": "Hårband",    "correct": false },
+  { "id": 16, "label": "Glass",       "correct": false },
+  { "id": 17, "label": "Sovrummet -> köket 10s",       "correct": false },
+  { "id": 18, "label": "Päron",       "correct": false },
+  { "id": 19, "label": "GlobeTrotter",       "correct": false },
+  { "id": 20, "label": "Färgkonstnär",       "correct": false }
+]

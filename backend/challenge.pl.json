@@ -1,0 +1,24 @@
+[
+  { "id": 1,  "label": "Głodna",                 "correct": true  },
+  { "id": 2,  "label": "Siostra",                "correct": true  },
+  { "id": 3,  "label": "Chleb razowy",           "correct": true  },
+  { "id": 4,  "label": "Wspinająca się małpka",  "correct": true  },
+  { "id": 5,  "label": "Ogórek kanapkowy",       "correct": true  },
+  { "id": 6,  "label": "Dynamit Harry",          "correct": true  },
+  { "id": 7,  "label": "Larki",                  "correct": true  },
+  { "id": 8,  "label": "Uparta",                 "correct": true  },
+
+  { "id": 21, "label": "Łatwa do rozbawienia",       "correct": false },
+  { "id": 9,  "label": "Radzi sobie sama",       "correct": false },
+  { "id": 10, "label": "Alexander",              "correct": false },
+  { "id": 11, "label": "Śpi całe noce",          "correct": false },
+  { "id": 12, "label": "Ryba",                   "correct": false },
+  { "id": 13, "label": "Prysznic",               "correct": false },
+  { "id": 14, "label": "Jazda samochodem",     "correct": false },
+  { "id": 15, "label": "Opaska do włosów",       "correct": false },
+  { "id": 16, "label": "Lody",                   "correct": false },
+  { "id": 17, "label": "Sypialnia -> kuchnia 10 s", "correct": false },
+  { "id": 18, "label": "Gruszka",                "correct": false },
+  { "id": 19, "label": "GlobeTrotter",          "correct": false },
+  { "id": 20, "label": "Malarka",       "correct": false }
+]

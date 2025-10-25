@@ -29,13 +29,19 @@ export default function Leaderboard({
       ? '❤️ Najlepszy przyjaciel Lary ❤️'
       : '❤️ Laras bästa vän ❤️'
 
+  // Mindre rubrik på polska så att den får plats på en rad oftare
+  const headerStyle: React.CSSProperties =
+    lang === 'pl'
+      ? { marginTop: 0, fontSize: '1rem', lineHeight: 1.1 }
+      : { marginTop: 0 }
+
   // Beräkna högsta och lägsta poäng
   const maxScore = items.length ? Math.max(...items.map(i => i.score)) : null
   const minScore = items.length ? Math.min(...items.map(i => i.score)) : null
 
   return (
     <div className="card">
-      <h2 style={{ marginTop: 0 }}>{headerText}</h2>
+      <h2 style={headerStyle}>{headerText}</h2>
 
       {items.length === 0 ? (
         <div>–</div>

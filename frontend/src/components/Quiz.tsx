@@ -29,7 +29,6 @@ const REVEAL_MS = 1600
 function DecorImage({ path }: { path: string }) {
   const [loaded, setLoaded] = useState(false)
 
-  // Samma rosa-tint som du kör nu
   const TINT_COLOR = 'rgba(236,109,156,0.35)'
   const IMG_OPACITY = 0.88
 
@@ -37,7 +36,7 @@ function DecorImage({ path }: { path: string }) {
     <div
       style={{
         width: '100%',
-        height: 300,              // ⬅ var 220 — lite högre = mindre beskärning (känns mer "ut-zoomat")
+        height: 300,
         position: 'relative',
         marginTop: '1rem',
         borderRadius: 6,
@@ -52,15 +51,14 @@ function DecorImage({ path }: { path: string }) {
         style={{
           width: '100%',
           height: '100%',
-          objectFit: 'cover',       // behåll "cover"-känslan
-          objectPosition: 'center', // vill du visa mer av toppen: 'center top'
+          objectFit: 'cover',
+          objectPosition: 'center',
           display: 'block',
           opacity: loaded ? IMG_OPACITY : 0,
           transition: 'opacity .25s ease',
           filter: 'saturate(100%) hue-rotate(-12deg) contrast(98%)',
         } as React.CSSProperties}
       />
-      {/* Rosa toning ovanpå bilden */}
       <div
         aria-hidden="true"
         style={{
@@ -74,8 +72,6 @@ function DecorImage({ path }: { path: string }) {
     </div>
   )
 }
-
-
 
 export default function Quiz({ player, onDone, lang }: { player: string, onDone: (score: number) => void, lang: Lang }) {
   const [screen, setScreen] = useState<Screen>('loading')
@@ -102,22 +98,27 @@ export default function Quiz({ player, onDone, lang }: { player: string, onDone:
         setQuestions(shuffle(uniqueQs))
         setChallenge(shuffle(ch.items))
 
-        // Läs manifestet med dina godtyckliga filnamn (ingen namnändring behövs)
+        // ⬇️ NYTT: hämta manifestet med BASE_URL och prefixa alla filer med BASE_URL
         let files: unknown = []
         try {
-          const res = await fetch('/img/decor-manifest.json', { cache: 'no-store' })
-          if (res.ok) files = await res.json()
+          const base = import.meta.env.BASE_URL || '/'
+          const res = await fetch(`${base}img/decor-manifest.json`, { cache: 'no-store' })
+          if (res.ok) {
+            files = await res.json()
+            if (Array.isArray(files)) {
+              const cleaned = (files as string[])
+                .filter((s): s is string => typeof s === 'string' && s.trim().length > 0)
+                .map(s => {
+                  const clean = s.startsWith('/') ? s.slice(1) : s
+                  const path = clean.startsWith('img/') ? clean : `img/${clean}`
+                  return `${base}${path}`
+                })
+              setDecorDeck(shuffle(cleaned))
+            } else {
+              setDecorDeck([])
+            }
+          }
         } catch { /* ignore */ }
-
-        if (Array.isArray(files)) {
-          // Stötta både ["a.jpg","b.png"] och ["/img/a.jpg", "/img/b.png"]
-          const cleaned = files
-            .filter((s): s is string => typeof s === 'string' && s.trim().length > 0)
-            .map(s => s.startsWith('/img/') ? s : `/img/${s}`)
-          setDecorDeck(shuffle(cleaned))
-        } else {
-          setDecorDeck([])
-        }
 
         setScreen('quiz')
       } catch (err: any) {
@@ -190,7 +191,7 @@ export default function Quiz({ player, onDone, lang }: { player: string, onDone:
     const selected = answers[q.id]
     const canNext = Boolean(selected) && !reveal
 
-    const decorPath = decorDeck[currentIndex] // ingen upprepning – ett unikt foto per fråga om det finns
+    const decorPath = decorDeck[currentIndex]
 
     return (
       <div className="card" style={{ paddingTop: '1rem' }}>
@@ -199,10 +200,8 @@ export default function Quiz({ player, onDone, lang }: { player: string, onDone:
           <div>{tt.questionLabel(currentIndex + 1, progress.total)}</div>
         </div>
 
-        {/* Mindre luft mellan frågetext och knappar */}
         <div style={{ marginBottom: '.6rem' }}>
           <div style={{ marginBottom: '.35rem' }}>{q.text}</div>
-          {/* Media från frågan (om du har satt i JSON) */}
           <Media media={q.media} />
           <div
             className="opt"
@@ -261,7 +260,6 @@ export default function Quiz({ player, onDone, lang }: { player: string, onDone:
           </div>
         </div>
 
-        {/* Slumpad bild under frågorna (tintad rosa) */}
         {decorPath && <DecorImage path={decorPath} />}
 
         <div className="row" style={{marginTop:'0.9rem', justifyContent:'flex-end', width:'100%'}}>

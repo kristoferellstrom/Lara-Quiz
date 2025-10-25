@@ -25,14 +25,20 @@ export default function PhotoCloud({
     let cancelled = false
     ;(async () => {
       try {
-        const res = await fetch('/img/decor-manifest.json', { cache: 'no-store' })
+        // ⬇️ NYTT: använd BASE_URL i produktion (GitHub Pages)
+        const base = import.meta.env.BASE_URL || '/'
+        const res = await fetch(`${base}img/decor-manifest.json`, { cache: 'no-store' })
         if (!res.ok) return
         const files: unknown = await res.json()
         if (!Array.isArray(files)) return
 
         const cleaned = (files as string[])
           .filter(Boolean)
-          .map(s => (s.startsWith('/img/') ? s : `/img/${s}`))
+          .map(s => {
+            const clean = s.startsWith('/') ? s.slice(1) : s
+            const path = clean.startsWith('img/') ? clean : `img/${clean}`
+            return `${base}${path}`
+          })
 
         // Välj antal bilder beroende på variant
         const take = Math.min(
@@ -46,8 +52,8 @@ export default function PhotoCloud({
           const r = Math.random()
           const size: Item['size'] =
             variant === 'background'
-              ? (r < 0.06 ? 'l' : r < 0.30 ? 'm' : 's') // bakgrund: mest små
-              : (r < 0.12 ? 'l' : r < 0.38 ? 'm' : 's') // inline: lite större mix
+              ? (r < 0.06 ? 'l' : r < 0.30 ? 'm' : 's')
+              : (r < 0.12 ? 'l' : r < 0.38 ? 'm' : 's')
           return { src, size }
         })
 
@@ -75,9 +81,9 @@ export default function PhotoCloud({
           inset: 0,
           zIndex: 0,
           pointerEvents: 'none',
-          opacity: 0.22,                                                 // diskret i bakgrunden
+          opacity: 0.22,
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(72px, 1fr))',   // tätare, små rutor
+          gridTemplateColumns: 'repeat(auto-fill, minmax(72px, 1fr))',
           gridAutoRows: 72,
           gap: 6,
           padding: '1.2rem',
@@ -98,14 +104,13 @@ export default function PhotoCloud({
         const span =
           it.size === 'l' ? 3 : it.size === 'm' ? 2 : 1
 
-        // Liten “organisk” känsla, men lugnare i bakgrunden
         const rotate = (variant === 'background'
-          ? (Math.random() * 2 - 1)    // -1..+1°
-          : (Math.random() * 6 - 3)    // -3..+3°
+          ? (Math.random() * 2 - 1)
+          : (Math.random() * 6 - 3)
         ).toFixed(2)
         const jitterX = (variant === 'background'
-          ? (Math.random() * 2 - 1)    // -1..+1px
-          : (Math.random() * 4 - 2)    // -2..+2px
+          ? (Math.random() * 2 - 1)
+          : (Math.random() * 4 - 2)
         ).toFixed(1)
         const jitterY = (variant === 'background'
           ? (Math.random() * 2 - 1)
@@ -140,7 +145,6 @@ export default function PhotoCloud({
                 opacity: 0.9,
               }}
             />
-            {/* rosa tint ovanpå bara bilden */}
             <div
               aria-hidden="true"
               style={{

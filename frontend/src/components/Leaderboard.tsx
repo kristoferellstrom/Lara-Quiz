@@ -29,11 +29,11 @@ export default function Leaderboard({
       ? '❤️ Najlepszy przyjaciel Lary ❤️'
       : '❤️ Laras bästa vän ❤️'
 
-  // Mindre rubrik på polska så att den får plats på en rad oftare
+  // Mindre rubrik på polska + centrerad rubrik på båda språk
   const headerStyle: React.CSSProperties =
     lang === 'pl'
-      ? { marginTop: 0, fontSize: '1rem', lineHeight: 1.1 }
-      : { marginTop: 0 }
+      ? { marginTop: 0, fontSize: '1rem', lineHeight: 1.1, textAlign: 'center' }
+      : { marginTop: 0, textAlign: 'center' }
 
   // Beräkna högsta och lägsta poäng
   const maxScore = items.length ? Math.max(...items.map(i => i.score)) : null

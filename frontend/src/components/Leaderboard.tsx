@@ -23,16 +23,11 @@ export default function Leaderboard({
 
   if (error) return <div className="card">{tt.error}: {error}</div>
 
-  // Språkberoende etiketter med emojis enligt önskemål
-  const bestFriendLabel =
+  // Rubriktext enligt önskemål (utan "Topplista")
+  const headerText =
     lang === 'pl'
-      ? '❤️ 🏆 Najlepszy przyjaciel Lary ❤️ 🏆'
-      : '❤️ 🏆 Laras bästa vän ❤️ 🏆'
-
-  const leastFriendLabel =
-    lang === 'pl'
-      ? '❤️ lary... znajomy... ;) ❤️'
-      : '❤️ laras... vän...;) ❤️'
+      ? '❤️ Najlepszy przyjaciel Lary ❤️'
+      : '❤️ Laras bästa vän ❤️'
 
   // Beräkna högsta och lägsta poäng
   const maxScore = items.length ? Math.max(...items.map(i => i.score)) : null
@@ -40,7 +35,7 @@ export default function Leaderboard({
 
   return (
     <div className="card">
-      <h2 style={{ marginTop: 0 }}>{tt.leaderboard}</h2>
+      <h2 style={{ marginTop: 0 }}>{headerText}</h2>
 
       {items.length === 0 ? (
         <div>–</div>
@@ -50,35 +45,24 @@ export default function Leaderboard({
             const isMax = maxScore !== null && it.score === maxScore
             const isMin = minScore !== null && it.score === minScore
 
-            return (
-              <li
-                key={`${it.name}-${idx}`}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '.5rem',
-                  marginBottom: '.35rem'
-                }}
-              >
-                {/* Vänster: namn — poäng (enradig med ellipsis) */}
-                <span
-                  title={`${it.name} — ${it.score}`}
-                  style={{
-                    flex: 1,
-                    minWidth: 0,
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis'
-                  }}
-                >
-                  <strong>{it.name}</strong> — {it.score}
-                </span>
+            // Emojis runt NAMNET (samma ordning på båda sidor om båda gäller)
+            let prefix = ''
+            let suffix = ''
+            if (isMax && isMin) {
+              prefix = '❤️ 🏆 '
+              suffix = ' ❤️ 🏆'
+            } else if (isMax) {
+              prefix = '🏆 '
+              suffix = ' 🏆'
+            } else if (isMin) {
+              prefix = '❤️ '
+              suffix = ' ❤️'
+            }
 
-                {/* Höger: etiketter (hålls på en rad längst till höger) */}
-                <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap' }}>
-                  {isMax && <span>{bestFriendLabel}</span>}
-                  {isMax && isMin && ' '}
-                  {isMin && <span>{leastFriendLabel}</span>}
+            return (
+              <li key={`${it.name}-${idx}`} style={{ marginBottom: '.35rem' }}>
+                <span>
+                  {prefix}<strong>{it.name}</strong>{suffix} — {it.score}
                 </span>
               </li>
             )
